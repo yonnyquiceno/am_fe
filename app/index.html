@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="mainApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="mainApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="mainApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" ng-app="mainApp" class="no-js">
-<!--<![endif]-->
+<html lang="es" ng-app="mainApp" class="no-js">
 
 <head>
     <meta charset="utf-8">
@@ -12,34 +7,58 @@
     <title>Dental Supplies Search App</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <base href="/"/>
+    <base href="/" />
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="/assets/images/logotype.png" height="100%">
-                </a>
+    <div id="navbar">
+        <div class="row top top-container">
+          <div class="col-md-1"></div>
+            <div class="col-md-3 brand">
+                <div class="logo-container">
+                    <img src="assets/images/logo-almundo.svg" />
+                </div>
             </div>
-            <ul class="nav navbar-nav">
-              <li><a href="/hotel">Resultados</a></li>
-            </ul>
-          </div>
-        </nav><br><br><br>
+            <div class="col-md-7 options">
+                <ul>
+                    <li><a href="#">ingresar</a></li>
+                    <li><a href="#">club almundo</a></li>
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">llamanos</a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </div>
+          <div class="col-md-1"></div>
+        </div>
+        <div class="row bottom">
+            <div class="col-md-12">
+                <ul>
+                    <li><a href="#">Hoteles</a></li>
+                    <li><a href="#">Vuelos</a></li>
+                    <li><a href="#">Vuelo + Hotel</a></li>
+                    <li><a href="#">Paquetes</a></li>
+                    <li><a href="#">Disney</a></li>
+                    <li><a href="#">Escapadas</a></li>
+                    <li><a href="#">Seguros</a></li>
+                    <li><a href="#">Autos</a></li>
+                    <li><a href="#">Cruceros</a></li>
+                    <li><a href="#">OFERTAS</a></li>
+                    <li><a href="#">Más</a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div ng-view></div>
+    <div class="container">
+        <div ng-view></div>
+    </div>
 
 
     <!-- In production use:
