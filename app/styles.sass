@@ -1,6 +1,5 @@
 *
   box-sizing: border-box
-
 body
   background: #F4F4F4
 
@@ -47,14 +46,37 @@ body
     font-size: 10px
     font-weight: bold
     ul
-      margin: 8px 0 8px 0
       color: white
       list-style-type: none
+      margin: 0
       li
         display: inline-block
-        padding: 0 10px 0 10px
+        padding: 8px 10px 8px 10px
         a
           color: white
-        a:hover
-          background-color: #093a7a
           text-decoration: none
+      li:hover
+        background-color: #093a7a
+
+#hotel-results
+  p
+    margin: 0
+  #location
+    font-size: 8px
+    padding: 7px 0 7px 0
+  #search-terms
+    border: 1px solid #ccc
+    padding: 7px
+    font-size: 12
+    ul
+      display: table-cell
+      list-style-type: none
+      padding: 0
+      li
+        display: inline-block
+        margin: 0 10px 0 10px
+        font-size: 10px
+        a
+          text-decoration: none
+      li:first-child
+        margin-left: 0px

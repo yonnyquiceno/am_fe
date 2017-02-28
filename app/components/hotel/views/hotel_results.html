@@ -1,2 +1,31 @@
-<h1>hotels results view</h1>
-<div ng-include="navbar.html"></div>
+<div id="hotel-results" class="container-fluid">
+    <div class="row">
+        <div class="col-md-12" id="location">
+            <p>
+                Home / Hoteles / {{search_query.location}}
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" id="search-terms">
+            <p>Hoteles disponibles para:</p>
+            <ul>
+                <li><i class="glyphicon glyphicon-map-marker"></i> {{search_query.location}}</li>
+                <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.arrival}}</li>
+                <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.departure}}</li>
+                <li><i class="glyphicon glyphicon-user"></i> {{search_query.guests}} huespedes </li>
+                <li><a href="#">Modificar búsqueda</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-9">
+            <div ng-repeat="hotel in hotels.hotels">
+                <h3>{{hotel.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>
