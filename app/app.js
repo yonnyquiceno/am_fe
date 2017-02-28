@@ -1,10 +1,10 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('mainApp', [
   'ngRoute',
-  'myApp.hotel',
-  'myApp.version',
+  'mainApp.hotel',
+  'mainApp.version',
   'ngAnimate'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {

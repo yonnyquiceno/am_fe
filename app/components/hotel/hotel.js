@@ -1,5 +1,5 @@
 'use strict';
 
 (function () {
-  var hotel = angular.module('myApp.hotel', ['ngRoute']);
+  var hotel = angular.module('mainApp.hotel', ['ngRoute']);
 })();
