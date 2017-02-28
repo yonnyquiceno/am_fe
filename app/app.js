@@ -16,6 +16,4 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       templateUrl: 'components/hotel/views/hotel_results.html',
       controller: 'hotelsController'
   });
-
-
 }]);
