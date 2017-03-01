@@ -19,12 +19,151 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-12 order-select">
+            <span>
+          Ordenar
+        </span>
+            <select class="" ng-model="order">
+                <option value="mr">Más relevantes</option>
+                <option value="pmb" selected>Precio más bajo</option>
+                <option value="pma">Precio más alto</option>
+                <option value="mee">Menos estrellas</option>
+                <option value="mae">Más estrellas</option>
+            </select>
+        </div>
+    </div>
+    <div id="filters" class="row">
         <div class="col-md-3">
+            <div class="row filter-row no-pad">
+                <div class="col-md-12 map-col no-pad">
+                    <div class="map">
+                        <img ng-src="http://images.almundo.com/201/1000000/10000/1000/915/915_276_b.jpg" alt="" />
+                        <div class="map-sub">
+                            <p>
+                                Ver hoteles en el mapa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row filtrar">
+                <div class="col-md-6 left ">
+                    <h2>Filtrar</h2>
+                </div>
+                <div class="col-md-6 right">
+                    <a href="#">
+                        x Eliminar filtros
+                    </a>
+                </div>
+            </div>
+            <div class="row hotel-name-search filter-row">
+                <div class="col-md-12">
+                    <p class="filter-title">
+                        <i class="glyphicon glyphicon-search"></i> Nombre del hotel
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-8 no-pad">
+                        <input class="no-pad" id="hote-name-input" style="width: 90%" type="text" value="">
+                    </div>
+                    <div class="col-md-4 no-pad">
+                        <input class="btn no-pad" type="button" value="Aceptar">
+                    </div>
+                </div>
+            </div>
+            <div class="row price-range filter-row">
+                <div class="col-md-12">
+                    <p class="filter-title">
+                        <i class="glyphicon glyphicon-usd"></i> Precio por noche
+                    </p>
+                </div>
+                <div class="col-md-12">
+                    <div>
+                        <rzslider rz-slider-model="slider.min" rz-slider-high="slider.max" rz-slider-options="slider.options"></rzslider>
+                    </div>
+                </div>
+            </div>
+            <div class="row filter-row">
+                <div class="col-md-12">
+
+                    <p class="filter-title">
+                        Estrellas
+                        <div class="checkbox-group">
+                            <input type='checkbox' checked>
+                            <span ng-repeat="i in genStarsArray(5) track by $index" class="hotel-stars">
+                                <i class="glyphicon glyphicon-star"></i>
+                              </span>
+                            <br>
+                            <input type='checkbox' checked>
+                            <span ng-repeat="i in genStarsArray(4) track by $index" class="hotel-stars">
+                                <i class="glyphicon glyphicon-star"></i>
+                              </span>
+                            <br>
+                            <input type='checkbox' checked>
+                            <span ng-repeat="i in genStarsArray(3) track by $index" class="hotel-stars">
+                                <i class="glyphicon glyphicon-star"></i>
+                              </span>
+                            <br>
+                            <input type='checkbox' checked>
+                            <span ng-repeat="i in genStarsArray(2) track by $index" class="hotel-stars">
+                                <i class="glyphicon glyphicon-star"></i>
+                              </span>
+                            <br>
+                            <input type='checkbox' checked>
+                            <span ng-repeat="i in genStarsArray(1) track by $index" class="hotel-stars">
+                                <i class="glyphicon glyphicon-star"></i>
+                              </span>
+                            <br>                          
+                        </div>
+                    </p>
+                </div>
+            </div>
 
         </div>
-        <div class="col-md-9">
+        <div class="col-md-9 hotels-col">
             <div ng-repeat="hotel in hotels.hotels">
-                <h3>{{hotel.name}}</h3>
+                <div class="row hotel-info-container">
+                    <div class="col-md-4 left">
+                        <div ng-controller="carouselController">
+                            <div class="slide-container">
+                                <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                                    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
+                                        <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mid">
+                        <strong class="hotel-name">{{hotel.name}}</strong>
+                        <br>
+                        <span ng-repeat="i in genStarsArray(hotel.stars) track by $index" class="hotel-stars">
+                          <i class="glyphicon glyphicon-star"></i>
+                        </span>
+                        <div class="hotel-regimes">
+                            Cama y desayuno
+                        </div>
+                        <div class="service-icons">
+                            <i class="	glyphicon glyphicon-music"></i>
+                            <i class="	glyphicon glyphicon-glass"></i>
+                            <i class="	glyphicon glyphicon-film"></i>
+                            <i class="	glyphicon glyphicon-time"></i>
+                            <i class="	glyphicon glyphicon-camera"></i>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 right">
+                        <p>
+                            Precio por noche por habitación
+                        </p>
+                        <span class="price-currency">ARS</span><span class="price-amount">{{hotel.price}}</span>
+                        <p>
+                            impuestos y tasas no incluidos
+                        </p>
+                        <input type="button" class="btn btn-block" name="name" value="Ver hotel">
+                        <strong>Pagá en cuotas <br> Pagá en destino</strong>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -5,7 +5,9 @@ angular.module('mainApp', [
   'ngRoute',
   'mainApp.hotel',
   'mainApp.version',
-  'ngAnimate'
+  'mainApp.carousel',
+  'ngAnimate',
+  'rzModule'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   // $locationProvider.hashPrefix('!');

@@ -9,8 +9,25 @@
             "departure": "2016-06-04",
         }
         $scope.hotels = listHotels();
+
+        $scope.genStarsArray = function(stars) {
+            return new Array(parseInt(stars));
+        }
+        $scope.slider = {
+            min: 100,
+            max: 180,
+            options: {
+                floor: 0,
+                ceil: 450
+            }
+        };
+        $scope.$on("slideEnded", function() {
+          alert("i get that")
+        });
+
         function listHotels() {
             return hotelsService.getAll()
         }
+
     });
 })();
