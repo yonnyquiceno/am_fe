@@ -105,12 +105,15 @@ body {
     #hotel-results .hotel-info-container .left img {
       width: 200px; }
     #hotel-results .hotel-info-container .left .slide-container {
-      width: 200px; }
+      width: 200px;
+      overflow: hidden; }
   #hotel-results .hotel-info-container .mid .hotel-name {
     font-size: 13px; }
   #hotel-results .hotel-info-container .mid .hotel-stars {
     color: #FDBA12; }
   #hotel-results .hotel-info-container .mid .hotel-regimes {
+    font-size: 10px;
+    font-weight: bold;
     color: #df6800; }
   #hotel-results .hotel-info-container .right {
     text-align: center; }
