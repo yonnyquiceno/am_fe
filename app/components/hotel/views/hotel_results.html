@@ -47,10 +47,10 @@
                 </div>
             </div>
             <div class="row filtrar">
-                <div class="col-md-6 left ">
+                <div class="col-md-6 left no-pad">
                     <h2>Filtrar</h2>
                 </div>
-                <div class="col-md-6 right">
+                <div class="col-md-6 right no-pad">
                     <a ng-click="filtersInit()">
                         x Eliminar filtros
                     </a>
@@ -78,7 +78,7 @@
                     </p>
                 </div>
                 <div class="col-md-12">
-                    <div>
+                    <div class="slider-container">
                         <rzslider rz-slider-model="slider.min" rz-slider-high="slider.max" rz-slider-options="slider.options"></rzslider>
                     </div>
                 </div>
@@ -88,33 +88,33 @@
                     <p class="filter-title">
                         <i class="glyphicon glyphicon-star"></i> Estrellas
                     </p>
-                    <div class="checkbox-group">
+                    <div class="stars-checkbox-group">
                         <input type='checkbox' disabled="true" class="st-filter-as" ng-model="stfilter.as"> Todas las estrellas
                         <br>
                         <input type='checkbox' class="st-filter" ng-true-value="5" ng-model="stfilter.cb5">
                         <span ng-repeat="i in genStarsArray(5) track by $index" class="hotel-stars">
                                 <i class="glyphicon glyphicon-star"></i>
-                              </span>
+                              </span> <span>( {{starsCount(5)}} )</span>
                         <br>
                         <input type='checkbox' class="st-filter" ng-true-value="4" ng-model="stfilter.cb4">
                         <span ng-repeat="i in genStarsArray(4) track by $index" class="hotel-stars">
                                 <i class="glyphicon glyphicon-star"></i>
-                              </span>
+                              </span><span>( {{starsCount(4)}} )</span>
                         <br>
                         <input type='checkbox' class="st-filter" ng-true-value="3" ng-model="stfilter.cb3">
                         <span ng-repeat="i in genStarsArray(3) track by $index" class="hotel-stars">
                                 <i class="glyphicon glyphicon-star"></i>
-                              </span>
+                              </span><span>( {{starsCount(3)}} )</span>
                         <br>
                         <input type='checkbox' class="st-filter" ng-true-value="2" ng-model="stfilter.cb2">
                         <span ng-repeat="i in genStarsArray(2) track by $index" class="hotel-stars">
                                 <i class="glyphicon glyphicon-star"></i>
-                              </span>
+                              </span><span>( {{starsCount(2)}} )</span>
                         <br>
                         <input type='checkbox' class="st-filter" ng-true-value="1" ng-model="stfilter.cb1">
                         <span ng-repeat="i in genStarsArray(1) track by $index" class="hotel-stars">
                                 <i class="glyphicon glyphicon-star"></i>
-                              </span>
+                              </span><span>( {{starsCount(1)}} )</span>
                         <br>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
         </div>
         <div class="col-md-9 hotels-col">
             <div ng-repeat="hotel in hotels.hotels | filter: {'name': nmfilter} | filter:priceRangeFilter | filter: starsFilter ">
-                <div class="row hotel-info-container">
+                <div class="row row-eq-height hotel-info-container">
                     <div class="col-md-4 left">
                         <div ng-controller="carouselController">
                             <div class="slide-container">
@@ -141,7 +141,7 @@
                           <i class="glyphicon glyphicon-star"></i>
                         </span>
                         <div class="hotel-regimes">
-                            Cama y desayuno
+                          <i class="material-icons">hotel</i><span class="reg-text"> Cama y desayuno </span>
                         </div>
                         <div class="service-icons">
                             <i class="	glyphicon glyphicon-music"></i>
@@ -152,11 +152,11 @@
                         </div>
 
                     </div>
-                    <div class="col-md-3 right">
+                    <div class="col-md-3 rightp">
                         <p>
                             Precio por noche por habitación
                         </p>
-                        <span class="price-currency">ARS</span><span class="price-amount">{{hotel.price | currency}}</span>
+                        <span class="price-currency">ARS</span><span class="price-amount">{{hotel.price | number}}</span>
                         <p>
                             impuestos y tasas no incluidos
                         </p>

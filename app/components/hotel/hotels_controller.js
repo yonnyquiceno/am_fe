@@ -59,6 +59,24 @@
             return prices
         }
 
+        function getStars() {
+            var stars = [];
+            $scope.hotels.hotels.map(function(hotel) {
+                stars.push(hotel.stars);
+            })
+            return stars
+        }
+
+      $scope.starsCount =   function countStars(amount, arr = getStars()) {
+            var count = 0
+            arr.forEach(function(stn) {
+                if (stn == amount) {
+                    count += 1
+                }
+            });
+            return count
+        }
+
         function getMaxPrice(numArray = getPrices()) {
             return Math.max.apply(null, numArray);
         }

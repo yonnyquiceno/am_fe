@@ -1,9 +1,37 @@
+@font-face
+  font-family: 'Material Icons'
+  font-style: normal
+  font-weight: 400
+  src: url(assets/fonts/MaterialIcons-Regular.woff)
+.material-icons
+  font-family: 'Material Icons'
+  font-weight: normal
+  font-style: normal
+  font-size: 24px
+  display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  font-feature-settings: 'liga'
+
 *
   box-sizing: border-box
 body
   background: #F4F4F4
 .no-pad
   padding: 0 !important
+.row-eq-height
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+
 #navbar
   .top
     background-color: #093a7a
@@ -94,31 +122,45 @@ body
     margin-bottom: 10px
     padding: 5px
     .left
+      width: 25%
       padding: 0
       img
-        width: 200px
+        height: 140px
       .slide-container
-        width: 200px
+        width: 100%
         overflow: hidden
     .mid
+      width: 50%
       .hotel
         &-name
           font-size: 13px
         &-stars
           color: #FDBA12
         &-regimes
-          font-size: 10px
+          font-size: 11px
           font-weight: bold
           color: #df6800
-    .right
+          margin-bottom: 5px
+          i
+            font-size: 12px
+          .reg-text
+            top: -2px
+            position: relative
+    .rightp
+      width: 25%
+      padding: 0 20px 0 20px
       text-align: center
+      border-left: 1px dashed silver
       .price
         &-amount
           color: #df6800
-          font-size: 20px
+          font-size: 24px
+          font-weight: bold
         &-currency
           color: #df6800
-          font-size: 15px
+          font-size: 17px
+          top: -3px
+          position: relative
       p
         font-size: 8px
       strong
@@ -136,10 +178,18 @@ body
     padding: 10px 0 10px 0
     .filter-title
       color: #157ab1
-      font-size: 12px
-    .checkbox-group
-      color: #FDBA12
+      font-size: 11px
+      font-weight: bold
+      margin-bottom: 10px
+    .stars-checkbox-group
       font-size: 10px
+      input
+        &[type="checkbox"], &[type="radio"]
+          height: 10px
+      .hotel-stars
+        font-size: 10px
+        i
+          color: #FDBA12
   .map-col
     padding: 0
     .map
@@ -158,12 +208,21 @@ body
     .left
       h2
         margin: 0
+        margin-left: -15px
         font-size: 12px
         font-weight: bold
         text-align: left
+        display: inline-block
+        vertical-align: middle
+        line-height: normal
     .right
+      text-align: right
       a
+        margin-right: -15px
         font-size: 10px
+        display: inline-block
+        vertical-align: middle
+        line-height: normal
   .hotel-name-search
     #hotel-name-input
       border-radius: 0
@@ -174,9 +233,24 @@ body
       font-size: 12px
       border-radius: 0
 
-  .rzslider
-    background: #157ab1
-  .rz-pointer:after
-    background: #157ab1
-  .rz-pointer
-    background: rgba(0, 0, 0, 0)
+  .slider-container
+    position: relative
+    top: -20px
+    .rzslider
+      .rz-pointer:after
+        background: white
+        height: 20px
+        width: 10px
+        border: 1px solid silver
+        margin-top: -6px
+      .rz-pointer
+        background: rgba(0, 0, 0, 0)
+      .rz-selection
+        z-index: 2
+        background: #828282
+        border-radius: 2px
+      .rz-bubble
+        bottom: -30px
+        font-size: 12px
+        font-weight: bold
+        color: black
