@@ -3,13 +3,6 @@
     var hotel = angular.module('mainApp.hotel');
     hotel.controller('hotelsController', function($scope, $http, $location, hotelsService) {
         stfilterInit();
-        $scope.filtersInit = function() {
-            stfilterInit();
-            $scope.slider.min = $scope.minprice
-            $scope.slider.max = $scope.maxprice
-            document.getElementById("hotel-name-input").value = "";
-            $scope.nmfilter = "";
-        }
         $scope.search_query = {
             "location": "Buenos Aires",
             "guests": "2",
@@ -47,6 +40,13 @@
             return new Array(parseInt(stars));
         }
 
+        $scope.filtersInit = function() {
+            stfilterInit();
+            $scope.slider.min = $scope.minprice
+            $scope.slider.max = $scope.maxprice
+            document.getElementById("hotel-name-input").value = "";
+            $scope.nmfilter = "";
+        }
         function listHotels() {
             return hotelsService.getAll()
         }

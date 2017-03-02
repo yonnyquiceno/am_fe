@@ -23,12 +23,12 @@
             <span>
           Ordenar
         </span>
-            <select class="" ng-model="order">
-                <option value="mr">Más relevantes</option>
-                <option value="pmb" selected>Precio más bajo</option>
-                <option value="pma">Precio más alto</option>
-                <option value="mee">Menos estrellas</option>
-                <option value="mae">Más estrellas</option>
+            <select class="" ng-model="sortType">
+                <option value="">- Selecciona -</option>
+                <option value="price">Menor Precio</option>
+                <option value="-price">Mayor Precio</option>
+                <option value="stars">Menos estrellas</option>
+                <option value="-stars">Más estrellas</option>
             </select>
         </div>
     </div>
@@ -121,46 +121,46 @@
             </div>
         </div>
         <div class="col-md-9 hotels-col">
-            <div ng-repeat="hotel in hotels.hotels | filter: {'name': nmfilter} | filter:priceRangeFilter | filter: starsFilter ">
-                <div class="row row-eq-height hotel-info-container">
-                    <div class="col-md-4 left">
-                        <div ng-controller="carouselController">
-                            <div class="slide-container">
-                                <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
-                                    <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id">
-                                        <img ng-src="{{slide.image}}" style="margin:auto;">
+            <div ng-repeat="hotel in hotels.hotels | filter: {'name': nmfilter} | filter:priceRangeFilter | filter: starsFilter | orderBy:sortType">
+                <div class="row row-eq-height hotel-info-container ">
+                    <div class="col-md-4 left ">
+                        <div ng-controller="carouselController ">
+                            <div class="slide-container ">
+                                <div uib-carousel active="active " interval="myInterval " no-wrap="noWrapSlides ">
+                                    <div uib-slide ng-repeat="slide in slides track by slide.id " index="slide.id ">
+                                        <img ng-src="{{slide.image}} " style="margin:auto; ">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 mid">
-                        <strong class="hotel-name">{{hotel.name}}</strong>
+                    <div class="col-md-5 mid ">
+                        <strong class="hotel-name ">{{hotel.name}}</strong>
                         <br>
-                        <span ng-repeat="i in genStarsArray(hotel.stars) track by $index" class="hotel-stars">
-                          <i class="glyphicon glyphicon-star"></i>
+                        <span ng-repeat="i in genStarsArray(hotel.stars) track by $index " class="hotel-stars ">
+                          <i class="glyphicon glyphicon-star "></i>
                         </span>
-                        <div class="hotel-regimes">
-                          <i class="material-icons">hotel</i><span class="reg-text"> Cama y desayuno </span>
+                        <div class="hotel-regimes ">
+                          <i class="material-icons ">hotel</i><span class="reg-text "> Cama y desayuno </span>
                         </div>
-                        <div class="service-icons">
-                            <i class="	glyphicon glyphicon-music"></i>
-                            <i class="	glyphicon glyphicon-glass"></i>
-                            <i class="	glyphicon glyphicon-film"></i>
-                            <i class="	glyphicon glyphicon-time"></i>
-                            <i class="	glyphicon glyphicon-camera"></i>
+                        <div class="service-icons ">
+                            <i class=" glyphicon glyphicon-music "></i>
+                            <i class=" glyphicon glyphicon-glass "></i>
+                            <i class=" glyphicon glyphicon-film "></i>
+                            <i class=" glyphicon glyphicon-time "></i>
+                            <i class=" glyphicon glyphicon-camera "></i>
                         </div>
 
                     </div>
-                    <div class="col-md-3 rightp">
+                    <div class="col-md-3 rightp ">
                         <p>
                             Precio por noche por habitación
                         </p>
-                        <span class="price-currency">ARS</span><span class="price-amount">{{hotel.price | number}}</span>
+                        <span class="price-currency ">ARS</span><span class="price-amount ">{{hotel.price | number}}</span>
                         <p>
                             impuestos y tasas no incluidos
                         </p>
-                        <input type="button" class="btn btn-block" name="name" value="Ver hotel">
+                        <input type="button " class="btn btn-block " name="name " value="Ver hotel ">
                         <strong>Pagá en cuotas <br> Pagá en destino</strong>
                     </div>
                 </div>
