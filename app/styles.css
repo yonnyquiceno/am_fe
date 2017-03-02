@@ -93,9 +93,6 @@ body {
 #hotel-results .hotels-col {
   padding-left: 30px; }
 
-#hotel-results .carousel-indicators {
-  display: none; }
-
 #hotel-results p {
   margin: 0; }
 
@@ -132,6 +129,20 @@ body {
   #hotel-results .hotel-info-container .left {
     width: 25%;
     padding: 0; }
+    #hotel-results .hotel-info-container .left .carousel-indicators {
+      display: none; }
+    #hotel-results .hotel-info-container .left .carousel-control .carousel-right-handler {
+      color: #157ab1;
+      background-color: #fafafa;
+      border-radius: 10px;
+      margin-top: 60px;
+      margin-right: 5px; }
+    #hotel-results .hotel-info-container .left .carousel-control .carousel-left-handler {
+      background-color: #fafafa;
+      border-radius: 10px;
+      color: #157ab1;
+      margin-top: 60px;
+      margin-left: -12px; }
     #hotel-results .hotel-info-container .left img {
       height: 140px; }
     #hotel-results .hotel-info-container .left .slide-container {
@@ -237,7 +248,8 @@ body {
   background-color: #002c77;
   color: white;
   font-size: 12px;
-  border-radius: 0; }
+  border-radius: 0;
+  margin-top: -3px; }
 
 #filters .slider-container {
   position: relative;

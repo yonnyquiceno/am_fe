@@ -9,6 +9,7 @@
                     "name": "Hotel Emperador",
                     "stars": "3",
                     "price": "1596",
+                    "regime": "Cama y desayuno",
                     "images": [{
                         "img": "http://images.almundo.com/201/1000000/10000/1000/915/915_241_b.jpg"
                     }, {
@@ -20,6 +21,7 @@
                     "name": "Hotel Intur Palacio San Martin",
                     "stars": "4",
                     "price": "2714",
+                    "regime": "Desayuno Completo",
                     "images": [{
                         "img": "https://images.almundo.com/201/4000000/3480000/3472200/3472151/3472151_202_b.jpg"
                     }, {
@@ -31,6 +33,7 @@
                     "name": "Hotel Nuevo Boston",
                     "stars": "2",
                     "price": "861",
+                    "regime": "Sólo la habitación",
                     "images": [{
                         "img": "https://images.almundo.com/201/3000000/2470000/2466900/2466861/2466861_151_b.jpg"
                     }, {
@@ -42,6 +45,7 @@
                     "name": "Madrid SmartRentals Chueca",
                     "stars": "3",
                     "price": "4017",
+                    "regime": "Cama y desayuno",
                     "images": [{
                         "img": "http://images.almundo.com/201/6000000/5510000/5503300/5503222/5503222_51_b.jpg"
                     }, {
@@ -53,6 +57,7 @@
                     "name": "Hotel Victoria 4",
                     "stars": "3",
                     "price": "4084",
+                    "regime": "Sólo la habitación",
                     "images": [{
                         "img": "http://images.almundo.com/201/2000000/1330000/1327100/1327068/1327068_119_b.jpg"
                     }, {
@@ -66,7 +71,7 @@
             angular.forEach(response.hotels, function(hotel) {
                 hotel.price = parseFloat(hotel.price);
             });
-            
+
             return response
         };
         return hotelsService;

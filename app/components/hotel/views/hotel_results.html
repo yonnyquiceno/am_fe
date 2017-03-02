@@ -121,7 +121,11 @@
             </div>
         </div>
         <div class="col-md-9 hotels-col">
-            <div ng-repeat="hotel in hotels.hotels | filter: {'name': nmfilter} | filter:priceRangeFilter | filter: starsFilter | orderBy:sortType">
+            <div ng-repeat="hotel in hotels.hotels
+             | filter: {'name': nmfilter}
+             | filter:priceRangeFilter
+             | filter: starsFilter
+             | orderBy:sortType">
                 <div class="row row-eq-height hotel-info-container ">
                     <div class="col-md-4 left ">
                         <div ng-controller="carouselController ">
@@ -141,7 +145,7 @@
                           <i class="glyphicon glyphicon-star "></i>
                         </span>
                         <div class="hotel-regimes ">
-                          <i class="material-icons ">hotel</i><span class="reg-text "> Cama y desayuno </span>
+                            <i class="material-icons ">hotel</i><span class="reg-text "> {{hotel.regime}} </span>
                         </div>
                         <div class="service-icons ">
                             <i class=" glyphicon glyphicon-music "></i>
