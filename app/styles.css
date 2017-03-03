@@ -75,6 +75,32 @@ body {
       .icon-option ul li .glyphicon {
         margin: 0 12px 0 5px; }
 
+.recommended {
+  background-color: #2671DD;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 3px;
+  text-align: center;
+  height: 20px;
+  width: 100%;
+  position: absolute;
+  z-index: 3; }
+
+.discount {
+  background-color: #509E3C;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  padding-top: 3px;
+  text-align: center;
+  height: 35px;
+  width: 28px;
+  position: absolute;
+  left: 10px;
+  top: -5px;
+  z-index: 4; }
+
 #navbar .top {
   background-color: #093a7a;
   font-size: 12px; }
