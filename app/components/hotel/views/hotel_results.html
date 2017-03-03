@@ -14,7 +14,7 @@
                 <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.arrival}}</li>
                 <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.departure}}</li>
                 <li><i class="glyphicon glyphicon-user"></i> {{search_query.guests}} huespedes </li>
-                <li><a class="expand-5" href="#">Modificar búsqueda</a></li>
+                <li><a class="expand-5" style="cursor:pointer">Modificar búsqueda</a></li>
             </ul>
         </div>
     </div>
@@ -56,7 +56,7 @@
             <div class="row filter-row map-row hide-on-mid">
                 <div class="col-md-12 map-col no-pad">
                     <div class="map">
-                        <img ng-src="http://images.almundo.com/201/1000000/10000/1000/915/915_276_b.jpg" alt="" />
+                        <img ng-src="https://media.istockphoto.com/vectors/vector-perspective-city-map-with-markers-vector-id493620050" alt="" />
                         <div class="map-sub">
                             <p>
                                 Ver hoteles en el mapa
@@ -195,7 +195,9 @@
                 <div class="row row-eq-height hotel-info-container ">
                     <div class="col-md-4 left ">
                         <div ng-controller="carouselController ">
-                            <div class="slide-container ">
+                            <div class="slide-container">
+                              <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
+                              <div class="discount" ng-show="{{hotel.discount.assert}}">{{hotel.discount.amount}} <br>OFF</div>
                                 <div uib-carousel active="active " interval="myInterval " no-wrap="noWrapSlides ">
                                     <div uib-slide ng-repeat="slide in slides track by slide.id " index="slide.id ">
                                         <img ng-src="{{slide.image}} " style="margin:auto; ">
