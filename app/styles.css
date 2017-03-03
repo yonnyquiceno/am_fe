@@ -60,12 +60,30 @@ body {
   .expandable {
     display: none; } }
 
+.icon-option {
+  position: absolute;
+  top: 15px;
+  right: 10px; }
+  .icon-option ul {
+    list-style-type: none;
+    display: inline-flex; }
+    .icon-option ul li {
+      border-style: none;
+      font-size: 20px;
+      display: inline;
+      color: white; }
+      .icon-option ul li .glyphicon {
+        margin: 0 12px 0 5px; }
+
 #navbar .top {
   background-color: #093a7a;
   font-size: 12px; }
   #navbar .top .brand {
     display: table;
     height: 50px; }
+    @media (max-width: 992px) {
+      #navbar .top .brand {
+        padding-left: 0; } }
     #navbar .top .brand .logo-container {
       display: table-cell;
       vertical-align: middle; }
@@ -76,8 +94,7 @@ body {
         max-height: 38px; }
         @media (max-width: 992px) {
           #navbar .top .brand .logo-container img {
-            max-height: 25px;
-            margin-left: 20px; } }
+            max-height: 25px; } }
   #navbar .top .options {
     height: 50px;
     display: table;
@@ -89,6 +106,8 @@ body {
       text-align: right;
       color: white;
       list-style-type: none; }
+      #navbar .top .options ul #club-almundo {
+        height: 1em; }
       #navbar .top .options ul li {
         text-align: center;
         display: inline-block;
@@ -101,9 +120,6 @@ body {
           text-decoration: none; }
       #navbar .top .options ul li:first-child {
         border-style: none; }
-    #navbar .top .options .icon-options li {
-      border-style: none;
-      font-size: 20px; }
 
 #navbar .bottom {
   border-top: 1px solid #ccc;
@@ -142,6 +158,9 @@ body {
 
 #hotel-results .hotels-col {
   padding-left: 40px; }
+  @media (max-width: 992px) {
+    #hotel-results .hotels-col {
+      padding-left: 15px; } }
 
 #hotel-results p {
   margin: 0; }
@@ -249,8 +268,10 @@ body {
 #filters .filter-row {
   background-color: white;
   margin-bottom: 5px;
-  padding-bottom: 5px;
   margin-left: 0; }
+  @media (min-width: 992px) {
+    #filters .filter-row {
+      padding-bottom: 10px; } }
   #filters .filter-row .filter-title {
     color: #157ab1;
     font-size: 11px;
@@ -303,7 +324,13 @@ body {
       line-height: normal; }
 
 #filters .hotel-name-search #hotel-name-input {
-  border-radius: 0; }
+  border-radius: 0;
+  padding-left: 0; }
+  #filters .hotel-name-search #hotel-name-input input[type=text] {
+    width: 100%; }
+  @media (max-width: 992px) {
+    #filters .hotel-name-search #hotel-name-input {
+      padding-right: 0; } }
 
 #filters .hotel-name-search .btn {
   width: 100%;
@@ -311,7 +338,10 @@ body {
   color: white;
   font-size: 12px;
   border-radius: 0;
-  margin-top: -3px; }
+  margin-top: -2px; }
+  @media (max-width: 992px) {
+    #filters .hotel-name-search .btn {
+      margin: 5px 0 10px 0; } }
 
 #filters .slider-container {
   position: relative;

@@ -52,6 +52,20 @@ body
 .expandable
     @media(max-width:992px)
       display: none
+.icon-option
+  position: absolute
+  top: 15px
+  right: 10px
+  ul
+    list-style-type: none
+    display: inline-flex
+    li
+      border-style: none
+      font-size: 20px
+      display: inline
+      color: white
+      .glyphicon
+        margin: 0 12px 0 5px
 #navbar
   .top
     background-color: #093a7a
@@ -59,6 +73,8 @@ body
     .brand
       display: table
       height: 50px
+      @media(max-width:992px)
+        padding-left: 0
       .logo-container
         display: table-cell
         vertical-align: middle
@@ -68,8 +84,6 @@ body
           max-height: 38px
           @media(max-width:992px)
             max-height: 25px
-            margin-left: 20px
-
     .options
       height: 50px
       display: table
@@ -81,6 +95,8 @@ body
         text-align: right
         color: white
         list-style-type: none
+        #club-almundo
+          height: 1em
         li
           text-align: center
           display: inline-block
@@ -93,10 +109,6 @@ body
             text-decoration: none
         li:first-child
           border-style: none
-      .icon-options
-        li
-          border-style: none
-          font-size: 20px
   .bottom
     border-top: 1px solid #ccc
     text-align: center
@@ -134,6 +146,8 @@ body
       text-align: center
   .hotels-col
     padding-left: 40px
+    @media(max-width:992px)
+      padding-left: 15px
   p
     margin: 0
   #location
@@ -237,8 +251,9 @@ body
   .filter-row
     background-color: white
     margin-bottom: 5px
-    padding-bottom: 5px
     margin-left: 0
+    @media(min-width:992px)
+      padding-bottom: 10px
     .filter-title
       color: #157ab1
       font-size: 11px
@@ -293,13 +308,21 @@ body
   .hotel-name-search
     #hotel-name-input
       border-radius: 0
+      padding-left: 0
+      input[type=text]
+        width: 100%
+      @media(max-width:992px)
+        padding-right: 0
     .btn
       width: 100%
       background-color: #002c77
       color: white
       font-size: 12px
       border-radius: 0
-      margin-top: -3px
+      margin-top: -2px
+      @media(max-width:992px)
+        margin: 5px 0 10px 0
+
 
   .slider-container
     position: relative
