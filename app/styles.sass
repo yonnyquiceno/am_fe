@@ -1,0 +1,348 @@
+@font-face
+  font-family: 'Material Icons'
+  font-style: normal
+  font-weight: 400
+  src: url(assets/fonts/MaterialIcons-Regular.woff)
+.material-icons
+  font-family: 'Material Icons'
+  font-weight: normal
+  font-style: normal
+  font-size: 24px
+  display: inline-block
+  line-height: 1
+  text-transform: none
+  letter-spacing: normal
+  word-wrap: normal
+  white-space: nowrap
+  direction: ltr
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  -moz-osx-font-smoothing: grayscale
+  font-feature-settings: 'liga'
+
+*
+  box-sizing: border-box
+body
+  background: #F4F4F4
+.no-pad
+  padding: 0 !important
+.hide-on-lg
+  @media(min-width:992px)
+    display: none !important
+.hide-on-mid
+  @media(max-width:992px)
+    display: none !important
+
+.row-eq-height
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+.expand
+  cursor: pointer
+  background: white
+  &-super
+    text-align: center
+    background-color: #F4F4F4
+    font-weight: normal
+    color: #157ab1
+    font-size: 14px
+    padding: 10px 0 10px 0
+    border-bottom: 1px solid #CCC
+.expandable
+    @media(max-width:992px)
+      display: none
+.icon-option
+  position: absolute
+  top: 15px
+  right: 10px
+  ul
+    list-style-type: none
+    display: inline-flex
+    li
+      border-style: none
+      font-size: 20px
+      display: inline
+      color: white
+      .glyphicon
+        margin: 0 12px 0 5px
+#navbar
+  .top
+    background-color: #093a7a
+    font-size: 12px
+    .brand
+      display: table
+      height: 50px
+      @media(max-width:992px)
+        padding-left: 0
+      .logo-container
+        display: table-cell
+        vertical-align: middle
+        @media(max-width:992px)
+          padding: 15px 0 15px 0
+        img
+          max-height: 38px
+          @media(max-width:992px)
+            max-height: 25px
+    .options
+      height: 50px
+      display: table
+      font-size: 10px
+      white-space: nowrap
+      ul
+        display: table-cell
+        vertical-align: middle
+        text-align: right
+        color: white
+        list-style-type: none
+        #club-almundo
+          height: 1em
+        li
+          text-align: center
+          display: inline-block
+          border-left: 1px solid white
+          padding: 0 16px 0 16px
+          a
+            color: white
+          a:hover
+            color: #ccc
+            text-decoration: none
+        li:first-child
+          border-style: none
+  .bottom
+    border-top: 1px solid #ccc
+    text-align: center
+    background-color: #31608f
+    font-size: 10px
+    font-weight: bold
+    ul
+      color: white
+      list-style-type: none
+      margin: 0
+      li
+        display: inline-block
+        padding: 8px 10px 8px 10px
+        a
+          color: white
+          text-decoration: none
+      li:hover
+        background-color: #093a7a
+
+#hotel-results
+  .search-modify
+    background-color: #ccc
+    padding: 20px 15px 20px 15px
+    text-align: center
+    .btn
+      background-color: #002c77
+      color: white
+      font-weight: bold
+      padding: 5px
+      margin-top: -3px
+    input
+      display: inline-block
+      width: 19%
+      padding: 5px 0 5px 0
+      text-align: center
+  .hotels-col
+    padding-left: 40px
+    @media(max-width:992px)
+      padding-left: 15px
+  p
+    margin: 0
+  #location
+    font-size: 8px
+    padding: 7px 0 7px 0
+  #search-terms
+    border: 1px solid #ccc
+    padding: 7px
+    font-size: 12
+    ul
+      display: table-cell
+      list-style-type: none
+      padding: 0
+      li
+        display: inline-block
+        margin: 0 10px 0 10px
+        font-size: 10px
+        a
+          text-decoration: none
+      li:first-child
+        margin-left: 0px
+  .order-select
+    text-align: right
+    margin: 10px 0 10px 0
+    padding: 0
+    @media(max-width:992px)
+      text-align: center
+  .hotel-info-container
+    background-color: white
+    margin-bottom: 10px
+    padding: 5px
+    .left
+      width: 25%
+      padding: 0
+      .carousel-indicators
+        display: none
+      .carousel-control
+        .carousel-right-handler
+          color: #157ab1
+          background-color: rgba(250, 250, 250, 1)
+          border-radius: 10px
+          margin-top: 60px
+          margin-right: 5px
+        .carousel-left-handler
+          background-color: rgba(250, 250, 250, 1)
+          border-radius: 10px
+          color: #157ab1
+          margin-top: 60px
+          margin-left: -12px
+      img
+        height: 140px
+      .slide-container
+        width: 100%
+        overflow: hidden
+    .mid
+      width: 50%
+      .hotel
+        &-name
+          font-size: 13px
+        &-stars
+          color: #FDBA12
+        &-regimes
+          font-size: 11px
+          font-weight: bold
+          color: #df6800
+          margin-bottom: 5px
+          i
+            font-size: 12px
+          .reg-text
+            top: -2px
+            position: relative
+    .rightp
+      width: 25%
+      padding: 0 20px 0 20px
+      text-align: center
+      border-left: 1px dashed silver
+      .price
+        &-amount
+          color: #df6800
+          font-size: 24px
+          font-weight: bold
+        &-currency
+          color: #df6800
+          font-size: 17px
+          top: -3px
+          position: relative
+      p
+        font-size: 8px
+      strong
+        font-size: 10px
+      .btn
+        background-color: #002c77
+        color: white
+        font-weight: bold
+        padding: 5px
+        margin-top: 5px
+#filters
+  .filters-init
+    text-align: center
+    font-size: 12px
+  .filter-row
+    background-color: white
+    margin-bottom: 5px
+    margin-left: 0
+    @media(min-width:992px)
+      padding-bottom: 10px
+    .filter-title
+      color: #157ab1
+      font-size: 11px
+      font-weight: bold
+      padding-top: 15px
+      padding-bottom: 10px
+      z-index: 2
+    .stars-checkbox-group
+      font-size: 10px
+      input
+        &[type="checkbox"], &[type="radio"]
+          height: 10px
+      .hotel-stars
+        font-size: 10px
+        i
+          color: #FDBA12
+  .map-row
+    margin: 0 -30px 0 -15px
+    .map-col
+      padding: 0
+      .map
+        text-align: center
+        img
+          height: 100px
+          width: 100%
+        .map-sub
+          color: #157ab1
+          text-align: center
+          font-size: 10px
+          padding: 7px
+
+  .filtrar
+    margin: 10px 0 10px 0
+    .left
+      h2
+        margin: 0
+        margin-left: 0
+        font-size: 12px
+        font-weight: bold
+        text-align: left
+        display: inline-block
+        vertical-align: middle
+        line-height: normal
+    .right
+      text-align: right
+      a
+        margin-right: -15px
+        font-size: 10px
+        display: inline-block
+        vertical-align: middle
+        line-height: normal
+  .hotel-name-search
+    #hotel-name-input
+      border-radius: 0
+      padding-left: 0
+      input[type=text]
+        width: 100%
+      @media(max-width:992px)
+        padding-right: 0
+    .btn
+      width: 100%
+      background-color: #002c77
+      color: white
+      font-size: 12px
+      border-radius: 0
+      margin-top: -2px
+      @media(max-width:992px)
+        margin: 5px 0 10px 0
+
+
+  .slider-container
+    position: relative
+    top: -20px
+    height: 50px
+    .rzslider
+      .rz-pointer:after
+        background: white
+        height: 20px
+        width: 10px
+        border: 1px solid silver
+        margin-top: -6px
+      .rz-pointer
+        background: rgba(0, 0, 0, 0)
+      .rz-selection
+        z-index: 2
+        background: #828282
+        border-radius: 2px
+      .rz-bubble
+        bottom: -30px
+        font-size: 12px
+        font-weight: bold
+        color: black

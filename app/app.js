@@ -1,11 +1,13 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+angular.module('mainApp', [
   'ngRoute',
-  'myApp.hotel',
-  'myApp.version',
-  'ngAnimate'
+  'mainApp.hotel',
+  'mainApp.version',
+  'mainApp.carousel',
+  'ngAnimate',
+  'rzModule'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   // $locationProvider.hashPrefix('!');
@@ -16,6 +18,4 @@ config(['$locationProvider', '$routeProvider', function($locationProvider, $rout
       templateUrl: 'components/hotel/views/hotel_results.html',
       controller: 'hotelsController'
   });
-
-
 }]);

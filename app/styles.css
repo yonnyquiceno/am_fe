@@ -1,0 +1,366 @@
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/MaterialIcons-Regular.woff); }
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  background: #F4F4F4; }
+
+.no-pad {
+  padding: 0 !important; }
+
+@media (min-width: 992px) {
+  .hide-on-lg {
+    display: none !important; } }
+
+@media (max-width: 992px) {
+  .hide-on-mid {
+    display: none !important; } }
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
+
+.expand {
+  cursor: pointer;
+  background: white; }
+  .expand-super {
+    text-align: center;
+    background-color: #F4F4F4;
+    font-weight: normal;
+    color: #157ab1;
+    font-size: 14px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #CCC; }
+
+@media (max-width: 992px) {
+  .expandable {
+    display: none; } }
+
+.icon-option {
+  position: absolute;
+  top: 15px;
+  right: 10px; }
+  .icon-option ul {
+    list-style-type: none;
+    display: inline-flex; }
+    .icon-option ul li {
+      border-style: none;
+      font-size: 20px;
+      display: inline;
+      color: white; }
+      .icon-option ul li .glyphicon {
+        margin: 0 12px 0 5px; }
+
+#navbar .top {
+  background-color: #093a7a;
+  font-size: 12px; }
+  #navbar .top .brand {
+    display: table;
+    height: 50px; }
+    @media (max-width: 992px) {
+      #navbar .top .brand {
+        padding-left: 0; } }
+    #navbar .top .brand .logo-container {
+      display: table-cell;
+      vertical-align: middle; }
+      @media (max-width: 992px) {
+        #navbar .top .brand .logo-container {
+          padding: 15px 0 15px 0; } }
+      #navbar .top .brand .logo-container img {
+        max-height: 38px; }
+        @media (max-width: 992px) {
+          #navbar .top .brand .logo-container img {
+            max-height: 25px; } }
+  #navbar .top .options {
+    height: 50px;
+    display: table;
+    font-size: 10px;
+    white-space: nowrap; }
+    #navbar .top .options ul {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: right;
+      color: white;
+      list-style-type: none; }
+      #navbar .top .options ul #club-almundo {
+        height: 1em; }
+      #navbar .top .options ul li {
+        text-align: center;
+        display: inline-block;
+        border-left: 1px solid white;
+        padding: 0 16px 0 16px; }
+        #navbar .top .options ul li a {
+          color: white; }
+        #navbar .top .options ul li a:hover {
+          color: #ccc;
+          text-decoration: none; }
+      #navbar .top .options ul li:first-child {
+        border-style: none; }
+
+#navbar .bottom {
+  border-top: 1px solid #ccc;
+  text-align: center;
+  background-color: #31608f;
+  font-size: 10px;
+  font-weight: bold; }
+  #navbar .bottom ul {
+    color: white;
+    list-style-type: none;
+    margin: 0; }
+    #navbar .bottom ul li {
+      display: inline-block;
+      padding: 8px 10px 8px 10px; }
+      #navbar .bottom ul li a {
+        color: white;
+        text-decoration: none; }
+    #navbar .bottom ul li:hover {
+      background-color: #093a7a; }
+
+#hotel-results .search-modify {
+  background-color: #ccc;
+  padding: 20px 15px 20px 15px;
+  text-align: center; }
+  #hotel-results .search-modify .btn {
+    background-color: #002c77;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: -3px; }
+  #hotel-results .search-modify input {
+    display: inline-block;
+    width: 19%;
+    padding: 5px 0 5px 0;
+    text-align: center; }
+
+#hotel-results .hotels-col {
+  padding-left: 40px; }
+  @media (max-width: 992px) {
+    #hotel-results .hotels-col {
+      padding-left: 15px; } }
+
+#hotel-results p {
+  margin: 0; }
+
+#hotel-results #location {
+  font-size: 8px;
+  padding: 7px 0 7px 0; }
+
+#hotel-results #search-terms {
+  border: 1px solid #ccc;
+  padding: 7px;
+  font-size: 12; }
+  #hotel-results #search-terms ul {
+    display: table-cell;
+    list-style-type: none;
+    padding: 0; }
+    #hotel-results #search-terms ul li {
+      display: inline-block;
+      margin: 0 10px 0 10px;
+      font-size: 10px; }
+      #hotel-results #search-terms ul li a {
+        text-decoration: none; }
+    #hotel-results #search-terms ul li:first-child {
+      margin-left: 0px; }
+
+#hotel-results .order-select {
+  text-align: right;
+  margin: 10px 0 10px 0;
+  padding: 0; }
+  @media (max-width: 992px) {
+    #hotel-results .order-select {
+      text-align: center; } }
+
+#hotel-results .hotel-info-container {
+  background-color: white;
+  margin-bottom: 10px;
+  padding: 5px; }
+  #hotel-results .hotel-info-container .left {
+    width: 25%;
+    padding: 0; }
+    #hotel-results .hotel-info-container .left .carousel-indicators {
+      display: none; }
+    #hotel-results .hotel-info-container .left .carousel-control .carousel-right-handler {
+      color: #157ab1;
+      background-color: #fafafa;
+      border-radius: 10px;
+      margin-top: 60px;
+      margin-right: 5px; }
+    #hotel-results .hotel-info-container .left .carousel-control .carousel-left-handler {
+      background-color: #fafafa;
+      border-radius: 10px;
+      color: #157ab1;
+      margin-top: 60px;
+      margin-left: -12px; }
+    #hotel-results .hotel-info-container .left img {
+      height: 140px; }
+    #hotel-results .hotel-info-container .left .slide-container {
+      width: 100%;
+      overflow: hidden; }
+  #hotel-results .hotel-info-container .mid {
+    width: 50%; }
+    #hotel-results .hotel-info-container .mid .hotel-name {
+      font-size: 13px; }
+    #hotel-results .hotel-info-container .mid .hotel-stars {
+      color: #FDBA12; }
+    #hotel-results .hotel-info-container .mid .hotel-regimes {
+      font-size: 11px;
+      font-weight: bold;
+      color: #df6800;
+      margin-bottom: 5px; }
+      #hotel-results .hotel-info-container .mid .hotel-regimes i {
+        font-size: 12px; }
+      #hotel-results .hotel-info-container .mid .hotel-regimes .reg-text {
+        top: -2px;
+        position: relative; }
+  #hotel-results .hotel-info-container .rightp {
+    width: 25%;
+    padding: 0 20px 0 20px;
+    text-align: center;
+    border-left: 1px dashed silver; }
+    #hotel-results .hotel-info-container .rightp .price-amount {
+      color: #df6800;
+      font-size: 24px;
+      font-weight: bold; }
+    #hotel-results .hotel-info-container .rightp .price-currency {
+      color: #df6800;
+      font-size: 17px;
+      top: -3px;
+      position: relative; }
+    #hotel-results .hotel-info-container .rightp p {
+      font-size: 8px; }
+    #hotel-results .hotel-info-container .rightp strong {
+      font-size: 10px; }
+    #hotel-results .hotel-info-container .rightp .btn {
+      background-color: #002c77;
+      color: white;
+      font-weight: bold;
+      padding: 5px;
+      margin-top: 5px; }
+
+#filters .filters-init {
+  text-align: center;
+  font-size: 12px; }
+
+#filters .filter-row {
+  background-color: white;
+  margin-bottom: 5px;
+  margin-left: 0; }
+  @media (min-width: 992px) {
+    #filters .filter-row {
+      padding-bottom: 10px; } }
+  #filters .filter-row .filter-title {
+    color: #157ab1;
+    font-size: 11px;
+    font-weight: bold;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    z-index: 2; }
+  #filters .filter-row .stars-checkbox-group {
+    font-size: 10px; }
+    #filters .filter-row .stars-checkbox-group input[type="checkbox"], #filters .filter-row .stars-checkbox-group input[type="radio"] {
+      height: 10px; }
+    #filters .filter-row .stars-checkbox-group .hotel-stars {
+      font-size: 10px; }
+      #filters .filter-row .stars-checkbox-group .hotel-stars i {
+        color: #FDBA12; }
+
+#filters .map-row {
+  margin: 0 -30px 0 -15px; }
+  #filters .map-row .map-col {
+    padding: 0; }
+    #filters .map-row .map-col .map {
+      text-align: center; }
+      #filters .map-row .map-col .map img {
+        height: 100px;
+        width: 100%; }
+      #filters .map-row .map-col .map .map-sub {
+        color: #157ab1;
+        text-align: center;
+        font-size: 10px;
+        padding: 7px; }
+
+#filters .filtrar {
+  margin: 10px 0 10px 0; }
+  #filters .filtrar .left h2 {
+    margin: 0;
+    margin-left: 0;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal; }
+  #filters .filtrar .right {
+    text-align: right; }
+    #filters .filtrar .right a {
+      margin-right: -15px;
+      font-size: 10px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: normal; }
+
+#filters .hotel-name-search #hotel-name-input {
+  border-radius: 0;
+  padding-left: 0; }
+  #filters .hotel-name-search #hotel-name-input input[type=text] {
+    width: 100%; }
+  @media (max-width: 992px) {
+    #filters .hotel-name-search #hotel-name-input {
+      padding-right: 0; } }
+
+#filters .hotel-name-search .btn {
+  width: 100%;
+  background-color: #002c77;
+  color: white;
+  font-size: 12px;
+  border-radius: 0;
+  margin-top: -2px; }
+  @media (max-width: 992px) {
+    #filters .hotel-name-search .btn {
+      margin: 5px 0 10px 0; } }
+
+#filters .slider-container {
+  position: relative;
+  top: -20px;
+  height: 50px; }
+  #filters .slider-container .rzslider .rz-pointer:after {
+    background: white;
+    height: 20px;
+    width: 10px;
+    border: 1px solid silver;
+    margin-top: -6px; }
+  #filters .slider-container .rzslider .rz-pointer {
+    background: transparent; }
+  #filters .slider-container .rzslider .rz-selection {
+    z-index: 2;
+    background: #828282;
+    border-radius: 2px; }
+  #filters .slider-container .rzslider .rz-bubble {
+    bottom: -30px;
+    font-size: 12px;
+    font-weight: bold;
+    color: black; }

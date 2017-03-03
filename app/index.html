@@ -1,56 +1,91 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html lang="en" ng-app="myApp" class="no-js">
-<!--<![endif]-->
+<html lang="es" ng-app="mainApp" class="no-js">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Dental Supplies Search App</title>
+    <title>almundo.com</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
-    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-    <base href="/"/>
+    <base href="/" />
+    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css" />
 </head>
 
 <body>
-    <div class="container">
-        <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">
-                    <img alt="Brand" src="/assets/images/brand_logo.png" height="100%">
-                </a>
-            </div>
-            <ul class="nav navbar-nav">
-              <li><a href="/hotel">Busqueda por Categoría</a></li>
+    <div class="container-fluid" id="navbar">
+        <div class="icon-option hide-on-lg">
+            <ul>
+                <li><i class="glyphicon glyphicon-user"></i></li>
+                <li><i class="glyphicon glyphicon-phone"></i></li>
+                <li><i class="glyphicon glyphicon-menu-hamburger"></i></li>
             </ul>
-          </div>
-        </nav><br><br><br><br><br>
+        </div>
+        <div class="row row-eq-height top">
+            <div class="col-md-1"></div>
+            <div class="col-md-4 brand">
+                <div class="logo-container">
+                    <img src="assets/images/logo-almundo.svg" />
+                </div>
+            </div>
+            <div class="col-md-6 options">
+                <ul class="hide-on-mid ">
+                    <li><i class="glyphicon glyphicon-user"></i> <a href="#">ingresar</a></li>
+                    <li>
+                        <a href="#">
+                            <img id="club-almundo" src="https://images.almundo.com/205/image/upload/v1474987989/static/components/logo-clubalmundo.svg"/>
+                        </a>
+                    </li>
+                    <li><a href="#">Sucursales</a></li>
+                    <li><a href="#">llamanos <i class="glyphicon glyphicon-menu-down"></i></a></li>
+                    <li><a href="#">Ayuda</a></li>
+                </ul>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        <div class="row bottom hide-on-mid">
+            <div class="col-md-12">
+                <ul>
+                    <li><a href="#">Hoteles</a></li>
+                    <li><a href="#">Vuelos</a></li>
+                    <li><a href="#">Vuelo + Hotel</a></li>
+                    <li><a href="#">Paquetes</a></li>
+                    <li><a href="#">Disney</a></li>
+                    <li><a href="#">Escapadas</a></li>
+                    <li><a href="#">Seguros</a></li>
+                    <li><a href="#">Autos</a></li>
+                    <li><a href="#">Cruceros</a></li>
+                    <li><a href="#">OFERTAS</a></li>
+                    <li><a href="#">Más <i class="glyphicon glyphicon-menu-down"></i></a></li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div ng-view></div>
-
-
+    <div class="container">
+        <div ng-view></div>
+    </div>
     <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="components/carousel/carousel_override.js"></script>
+    <script src="bower_components/angularjs-slider/dist/rzslider.min.js"></script>
     <script src="app.js"></script>
     <script src="components/hotel/hotel.js"></script>
     <script src="components/hotel/hotels_controller.js"></script>
+    <script src="components/carousel/carousel_controller.js"></script>
+    <script src="components/hotel/services/hotelsService.js"></script>
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>

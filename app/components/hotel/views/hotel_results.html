@@ -1,45 +1,237 @@
-<div class="container text-center">
+<div id="hotel-results" class="container-fluid">
+    <div class="row hide-on-mid">
+        <div class="col-md-12" id="location">
+            <p>
+                Home / Hoteles / {{search_query.location}}
+            </p>
+        </div>
+    </div>
+    <div class="row hide-on-mid">
+        <div class="col-md-12" id="search-terms">
+            <p>Hoteles disponibles para:</p>
+            <ul>
+                <li><i class="glyphicon glyphicon-map-marker"></i> {{search_query.location}}</li>
+                <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.arrival}}</li>
+                <li><i class="glyphicon glyphicon-calendar"></i> {{search_query.departure}}</li>
+                <li><i class="glyphicon glyphicon-user"></i> {{search_query.guests}} huespedes </li>
+                <li><a class="expand-5" href="#">Modificar búsqueda</a></li>
+            </ul>
+        </div>
+    </div>
     <div class="row">
-      <div class="col-lg-3"></div>
-        <div class="col-lg-6">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="búsqueda..." ng-model="query" ng-keypress="($event.charCode==13)? sendRequest(query) : return">
-                <div class="input-group-btn">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Categoría <span class="caret"></span></button>
-                    <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#" ng-click="setCat(''); sendRequest(query);">Todas las categorías</a></li>
-                        <li><a href="#" ng-click="setCat(1); sendRequest(query);">Amalgamas</a></li>
-                        <li><a href="#" ng-click="setCat(2); sendRequest(query);">Aparatos</a></li>
-                    </ul>
+        <div class="col-md-12 expand-super expand-5 hide-on-lg" style="cursor: pointer">
+            Modificar búsqueda
+        </div>
+        <div class="col-md-12 no-pad">
+            <div class="expandable search-modify" id="expandable-5" style="display: none">
+                <input type="text" placeholder="{{search_query.location}}">
+                <input type="text" class="date-input" placeholder="{{search_query.arrival}}">
+                <input type="text" class="date-input" placeholder="{{search_query.departure}}">
+                <input type="text" placeholder="{{search_query.guests}} huéspedes" value="">
+                <input type="button" class="btn button" value="Buscar" id="btn-new-search">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="expand-super hide-on-lg">
+            Ver hoteles en el mapa
+        </div>
+    </div>
+    <div class="row hide-on-mid">
+        <div class="col-md-12 order-select">
+            <span>
+          Ordenar
+        </span>
+            <select class="" ng-model="sortType">
+                <option value="">Más relevantes</option>
+                <option value="price">Menor Precio</option>
+                <option value="-price">Mayor Precio</option>
+                <option value="stars">Menos estrellas</option>
+                <option value="-stars">Más estrellas</option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" id="filters">
+            <div class="row filter-row map-row hide-on-mid">
+                <div class="col-md-12 map-col no-pad">
+                    <div class="map">
+                        <img ng-src="http://images.almundo.com/201/1000000/10000/1000/915/915_276_b.jpg" alt="" />
+                        <div class="map-sub">
+                            <p>
+                                Ver hoteles en el mapa
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="expand expand-super hide-on-lg" id="expand-0">
+                    filtrar
+                </div>
+            </div>
+            <div class="row expandable" id="expandable-0">
+
+                <div class="row filtrar">
+                    <div class="col-md-6 left no-pad hide-on-mid">
+                        <h2>Filtrar</h2>
+                    </div>
+                    <div class="col-md-6 right no-pad hide-on-mid">
+                        <a ng-click="filtersInit()">
+                        x Eliminar filtros
+                    </a>
+                    </div>
+                </div>
+                <!-- hotel name search -->
+                <div class="row hotel-name-search filter-row">
+                    <div class="col-md-12 expand filter-title" id="expand-1">
+                        <i class="glyphicon glyphicon-search"></i> Nombre del hotel
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expandable" id="expandable-1">
+                            <div class="col-md-8" id="hotel-name-input" >
+                                <input class="no-pad" type="text" ng-model="nmfilter" placeholder="Ingrese el nombre del hotel">
+                            </div>
+                            <div class="col-md-4 no-pad">
+                                <input class="btn no-pad" type="button" value="Aceptar">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- slider -->
+                <div class="row filter-row">
+                    <div class="col-md-12 expand filter-title" id="expand-2">
+                        <i class="glyphicon glyphicon-usd"></i> Precio por noche
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expandable" id="expandable-2">
+                            <div class="slider-container">
+                                <rzslider rz-slider-model="slider.min" rz-slider-high="slider.max" rz-slider-options="slider.options"></rzslider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- stars -->
+                <div class="row filter-row">
+                    <div class="col-md-12 expand filter-title" id="expand-3">
+                        <i class="glyphicon glyphicon-star"></i> Estrellas
+                    </div>
+                    <div class="col-md-12">
+                        <div class="expandable" id="expandable-3">
+                            <div class="stars-checkbox-group">
+                                <input type='checkbox' disabled="true" class="st-filter-as" ng-model="stfilter.as"> Todas las estrellas
+                                <br>
+                                <input type='checkbox' class="st-filter" ng-true-value="5" ng-model="stfilter.cb5">
+                                <span ng-repeat="i in genStarsArray(5) track by $index" class="hotel-stars">
+                                  <i class="glyphicon glyphicon-star"></i>
+                          </span>
+                                <span>
+                            ( {{starsCount(5)}} )
+                          </span>
+                                <br>
+                                <input type='checkbox' class="st-filter" ng-true-value="4" ng-model="stfilter.cb4">
+                                <span ng-repeat="i in genStarsArray(4) track by $index" class="hotel-stars">
+                                  <i class="glyphicon glyphicon-star"></i>
+                          </span>
+                                <span>
+                            ( {{starsCount(4)}} )
+                          </span>
+                                <br>
+                                <input type='checkbox' class="st-filter" ng-true-value="3" ng-model="stfilter.cb3">
+                                <span ng-repeat="i in genStarsArray(3) track by $index" class="hotel-stars">
+                                  <i class="glyphicon glyphicon-star"></i>
+                          </span>
+                                <span>
+                            ( {{starsCount(3)}} )
+                                </span>
+                                <br>
+                                <input type='checkbox' class="st-filter" ng-true-value="2" ng-model="stfilter.cb2">
+                                <span ng-repeat="i in genStarsArray(2) track by $index" class="hotel-stars">
+                                  <i class="glyphicon glyphicon-star"></i>
+                          </span>
+                                <span>
+                            ( {{starsCount(2)}} )
+                          </span>
+                                <br>
+                                <input type='checkbox' class="st-filter" ng-true-value="1" ng-model="stfilter.cb1">
+                                <span ng-repeat="i in genStarsArray(1) track by $index" class="hotel-stars">
+                                  <i class="glyphicon glyphicon-star"></i>
+                          </span>
+                                <span>
+                            ( {{starsCount(1)}} )
+                          </span>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 right no-pad hide-on-lg filters-init">
+                    <a ng-click="filtersInit()">
+                    x Eliminar filtros
+                </a>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3"></div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="animate-switch-container" ng-switch="message_switch">
-                <h5 class="animate-switch" ng-switch-when="articles_finded"><strong> {{number_of_articles}} </strong> articulos encontrados</h5>
-                <h5 class="animate-switch" ng-switch-when="no_articles">no se encontraron artículos </h5>
+        <div class="row hide-on-lg">
+            <div class="col-md-12 order-select">
+                <span>
+              Ordenar
+            </span>
+                <select class="" ng-model="sortType">
+                    <option value="">Más relevantes</option>
+                    <option value="price">Menor precio</option>
+                    <option value="-price">Mayor precio</option>
+                    <option value="stars">Menos estrellas</option>
+                    <option value="-stars">Más estrellas</option>
+                </select>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="flex-container">
-                <div ng-repeat="product in products">
-                    <div class="prodcontainer">
-                        <a ng-href={{product.id}}> <img ng-src={{product.image}} class="prod-img" /></a>
+        <div class="col-md-9 hotels-col">
+            <div ng-repeat="hotel in hotels.hotels
+             | filter: {'name': nmfilter}
+             | filter:priceRangeFilter
+             | filter: starsFilter
+             | orderBy:sortType">
+                <div class="row row-eq-height hotel-info-container ">
+                    <div class="col-md-4 left ">
+                        <div ng-controller="carouselController ">
+                            <div class="slide-container ">
+                                <div uib-carousel active="active " interval="myInterval " no-wrap="noWrapSlides ">
+                                    <div uib-slide ng-repeat="slide in slides track by slide.id " index="slide.id ">
+                                        <img ng-src="{{slide.image}} " style="margin:auto; ">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mid ">
+                        <strong class="hotel-name ">{{hotel.name}}</strong>
+                        <br>
+                        <span ng-repeat="i in genStarsArray(hotel.stars) track by $index " class="hotel-stars ">
+                          <i class="glyphicon glyphicon-star "></i>
+                        </span>
+                        <div class="hotel-regimes ">
+                            <i class="material-icons ">hotel</i><span class="reg-text "> {{hotel.regime}} </span>
+                        </div>
+                        <div class="service-icons ">
+                            <i class=" glyphicon glyphicon-music "></i>
+                            <i class=" glyphicon glyphicon-glass "></i>
+                            <i class=" glyphicon glyphicon-film "></i>
+                            <i class=" glyphicon glyphicon-time "></i>
+                            <i class=" glyphicon glyphicon-camera "></i>
+                        </div>
+
+                    </div>
+                    <div class="col-md-3 rightp ">
                         <p>
-                            nombre: {{product.name}}
+                            Precio por noche por habitación
                         </p>
+                        <span class="price-currency ">ARS</span><span class="price-amount ">{{hotel.price | number}}</span>
                         <p>
-                            categoría: {{product.category.trans.es}}
+                            impuestos y tasas no incluidos
                         </p>
-                        <p>
-                            precio: {{product.price}}
-                        </p>
+                        <input type="button " class="btn btn-block " name="name " value="Ver hotel ">
+                        <strong>Pagá en cuotas <br> Pagá en destino</strong>
                     </div>
                 </div>
             </div>
