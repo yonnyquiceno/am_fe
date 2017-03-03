@@ -2,21 +2,21 @@
 <html lang="es" ng-app="mainApp" class="no-js">
 
 <head>
+    <title>Resultado de Hoteles</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>almundo.com</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/png" href="../favicon.png" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css" />
     <link rel="stylesheet" href="styles.css">
+    <link href="./favicon.ico" rel="shortcut icon" type="image/x-icon" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
     <base href="/" />
-    <link rel="stylesheet" type="text/css" href="bower_components/angularjs-slider/dist/rzslider.css" />
 </head>
 
 <body>
@@ -74,6 +74,7 @@
     <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
+  <!--build:js js/main.min.js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
@@ -83,12 +84,14 @@
     <script src="bower_components/angularjs-slider/dist/rzslider.min.js"></script>
     <script src="app.js"></script>
     <script src="components/hotel/hotel.js"></script>
-    <script src="components/hotel/hotels_controller.js"></script>
-    <script src="components/carousel/carousel_controller.js"></script>
     <script src="components/hotel/services/hotelsService.js"></script>
     <script src="components/version/version.js"></script>
     <script src="components/version/version-directive.js"></script>
     <script src="components/version/interpolate-filter.js"></script>
+<!-- endbuild -->
+    <script src="components/hotel/hotels_controller.js"></script>
+    <script src="components/carousel/carousel_controller.js"></script>
+
 </body>
 
 </html>
