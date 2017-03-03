@@ -32,10 +32,11 @@ body
   @media(max-width:992px)
     display: none !important
 .row-eq-height
-  display: -webkit-box
-  display: -webkit-flex
-  display: -ms-flexbox
-  display: flex
+  @media(min-width:576px)
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
 .expand
   cursor: pointer
   background: white
@@ -73,8 +74,9 @@ body
   text-align: center
   height: 20px
   width: 100%
-  position: absolute
   z-index: 3
+  @media(min-width:576px)
+    position: absolute
 .discount
   background-color: #509E3C
   color: white
@@ -88,10 +90,17 @@ body
   left: 10px
   top: -5px
   z-index: 4
+  @media(max-width:576px)
+    left: 30px
+    top: 5px
 #navbar
   .top
     background-color: #093a7a
     font-size: 12px
+    display: -webkit-box
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
     .brand
       display: table
       height: 50px
@@ -202,8 +211,11 @@ body
     margin-bottom: 10px
     padding: 5px
     .left
-      width: 25%
-      padding: 0
+      @media(min-width:576px)
+        width: 25%
+        padding: 0
+      @media(max-width:576px)
+        padding-top: 10px
       .carousel-indicators
         display: none
       .carousel-control
@@ -221,12 +233,18 @@ body
           margin-left: -12px
       img
         height: 140px
+        @media(max-width:576px)
+          height: 180px
+          width: 350px
       .slide-container
         width: 100%
         overflow: hidden
 
     .mid
-      width: 50%
+      @media(min-width:576px)
+        width: 50%
+      @media(max-width:576px)
+        margin-bottom: 10px
       .hotel
         &-name
           font-size: 13px
@@ -243,10 +261,14 @@ body
             top: -2px
             position: relative
     .rightp
-      width: 25%
       padding: 0 20px 0 20px
       text-align: center
-      border-left: 1px dashed silver
+      @media(min-width:576px)
+        width: 25%
+        border-left: 1px dashed silver
+      @media(max-width:576px)
+        border-top: 1px dashed silver
+        padding: 15px 0 5px 0
       .price
         &-amount
           color: #df6800

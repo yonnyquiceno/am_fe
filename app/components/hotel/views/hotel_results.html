@@ -193,7 +193,7 @@
              | filter: starsFilter
              | orderBy:sortType">
                 <div class="row row-eq-height hotel-info-container ">
-                    <div class="col-md-4 left ">
+                    <div class=" col-12 col-md-4  left ">
                         <div ng-controller="carouselController ">
                             <div class="slide-container">
                                 <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
@@ -207,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 mid ">
+                    <div class="col-12 col-md-5 mid ">
                         <strong class="hotel-name ">{{hotel.name}}</strong>
                         <br>
                         <span ng-repeat="i in genStarsArray(hotel.stars) track by $index " class="hotel-stars ">
@@ -225,7 +225,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-3 rightp ">
+                    <div class="col-xs-12 col-md-3 rightp ">
                         <p>
                             Precio por noche por habitación
                         </p>
