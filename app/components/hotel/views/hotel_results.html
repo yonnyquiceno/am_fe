@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="expandable" id="expandable-1">
-                            <div class="col-md-8" id="hotel-name-input" >
+                            <div class="col-md-8" id="hotel-name-input">
                                 <input class="no-pad" type="text" ng-model="nmfilter" placeholder="Ingrese el nombre del hotel">
                             </div>
                             <div class="col-md-4 no-pad">
@@ -193,11 +193,12 @@
              | filter: starsFilter
              | orderBy:sortType">
                 <div class="row row-eq-height hotel-info-container ">
-                    <div class="col-md-4 left ">
+                    <div class=" col-12 col-md-4  left ">
                         <div ng-controller="carouselController ">
                             <div class="slide-container">
-                              <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
-                              <div class="discount" ng-show="{{hotel.discount.assert}}">{{hotel.discount.amount}} <br>OFF</div>
+                                <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
+                                <div class="discount" ng-show="{{hotel.discount.assert}}">{{hotel.discount.amount}}
+                                    <br>OFF</div>
                                 <div uib-carousel active="active " interval="myInterval " no-wrap="noWrapSlides ">
                                     <div uib-slide ng-repeat="slide in slides track by slide.id " index="slide.id ">
                                         <img ng-src="{{slide.image}} " style="margin:auto; ">
@@ -206,7 +207,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 mid ">
+                    <div class="col-12 col-md-5 mid ">
                         <strong class="hotel-name ">{{hotel.name}}</strong>
                         <br>
                         <span ng-repeat="i in genStarsArray(hotel.stars) track by $index " class="hotel-stars ">
@@ -224,7 +225,7 @@
                         </div>
 
                     </div>
-                    <div class="col-md-3 rightp ">
+                    <div class="col-xs-12 col-md-3 rightp ">
                         <p>
                             Precio por noche por habitación
                         </p>

@@ -2,7 +2,6 @@
     var person = angular.module('mainApp.hotel');
     person.service('hotelsService', function() {
         var hotelsService = {};
-
         hotelsService.getAll = function() {
             var response = {
                     "hotels": [{
@@ -96,7 +95,6 @@
             angular.forEach(response.hotels, function(hotel) {
                 hotel.price = parseFloat(hotel.price);
             });
-
             return response
         };
         return hotelsService;

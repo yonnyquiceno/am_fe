@@ -1,7 +1,7 @@
 'use strict';
 (function() {
     var hotel = angular.module('mainApp.hotel');
-    hotel.controller('hotelsController', function($scope, $http, $location, hotelsService) {
+    hotel.controller('hotelsController', function($scope, hotelsService) {
         stfilterInit();
         $scope.search_query = {
             "location": "Buenos Aires",
@@ -96,7 +96,7 @@
                 cb1: false
             }
         }
-        //jqLite Code
+
         angular.element('input.st-filter-as').click(function() {
             this.disabled = true;
             angular.element('input.st-filter').each(function() {
