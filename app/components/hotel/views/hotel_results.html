@@ -89,7 +89,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="expandable" id="expandable-1">
-                            <div class="col-md-8" id="hotel-name-input" >
+                            <div class="col-md-8" id="hotel-name-input">
                                 <input class="no-pad" type="text" ng-model="nmfilter" placeholder="Ingrese el nombre del hotel">
                             </div>
                             <div class="col-md-4 no-pad">
@@ -196,8 +196,9 @@
                     <div class="col-md-4 left ">
                         <div ng-controller="carouselController ">
                             <div class="slide-container">
-                              <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
-                              <div class="discount" ng-show="{{hotel.discount.assert}}">{{hotel.discount.amount}} <br>OFF</div>
+                                <div class="recommended" ng-show="{{hotel.recommended}}">¡Hotel recomendado!</div>
+                                <div class="discount" ng-show="{{hotel.discount.assert}}">{{hotel.discount.amount}}
+                                    <br>OFF</div>
                                 <div uib-carousel active="active " interval="myInterval " no-wrap="noWrapSlides ">
                                     <div uib-slide ng-repeat="slide in slides track by slide.id " index="slide.id ">
                                         <img ng-src="{{slide.image}} " style="margin:auto; ">

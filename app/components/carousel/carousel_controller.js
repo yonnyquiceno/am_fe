@@ -9,14 +9,13 @@ carousel.controller('carouselController', function ($scope) {
   var slides = $scope.slides = [];
   var currIndex = 0;
 
-
   $scope.addSlide = function(idx) {
     slides.push({
       image: slideimgs[idx].img,
       id: currIndex++
     });
   };
-
+  
   for (var i = 0; i < imgscount; i++) {
     $scope.addSlide(i);
   }
