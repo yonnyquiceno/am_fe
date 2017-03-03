@@ -26,12 +26,32 @@ body
   background: #F4F4F4
 .no-pad
   padding: 0 !important
+.hide-on-lg
+  @media(min-width:992px)
+    display: none !important
+.hide-on-mid
+  @media(max-width:992px)
+    display: none !important
+
 .row-eq-height
   display: -webkit-box
   display: -webkit-flex
   display: -ms-flexbox
   display: flex
-
+.expand
+  cursor: pointer
+  background: white
+  &-super
+    text-align: center
+    background-color: #F4F4F4
+    font-weight: normal
+    color: #157ab1
+    font-size: 14px
+    padding: 10px 0 10px 0
+    border-bottom: 1px solid #CCC
+.expandable
+    @media(max-width:992px)
+      display: none
 #navbar
   .top
     background-color: #093a7a
@@ -42,8 +62,14 @@ body
       .logo-container
         display: table-cell
         vertical-align: middle
+        @media(max-width:992px)
+          padding: 15px 0 15px 0
         img
           max-height: 38px
+          @media(max-width:992px)
+            max-height: 25px
+            margin-left: 20px
+
     .options
       height: 50px
       display: table
@@ -67,7 +93,10 @@ body
             text-decoration: none
         li:first-child
           border-style: none
-
+      .icon-options
+        li
+          border-style: none
+          font-size: 20px
   .bottom
     border-top: 1px solid #ccc
     text-align: center
@@ -88,8 +117,23 @@ body
         background-color: #093a7a
 
 #hotel-results
+  .search-modify
+    background-color: #ccc
+    padding: 20px 15px 20px 15px
+    text-align: center
+    .btn
+      background-color: #002c77
+      color: white
+      font-weight: bold
+      padding: 5px
+      margin-top: -3px
+    input
+      display: inline-block
+      width: 19%
+      padding: 5px 0 5px 0
+      text-align: center
   .hotels-col
-    padding-left: 30px
+    padding-left: 40px
   p
     margin: 0
   #location
@@ -115,6 +159,8 @@ body
     text-align: right
     margin: 10px 0 10px 0
     padding: 0
+    @media(max-width:992px)
+      text-align: center
   .hotel-info-container
     background-color: white
     margin-bottom: 10px
@@ -185,15 +231,21 @@ body
         padding: 5px
         margin-top: 5px
 #filters
+  .filters-init
+    text-align: center
+    font-size: 12px
   .filter-row
     background-color: white
     margin-bottom: 5px
-    padding: 10px 0 10px 0
+    padding-bottom: 5px
+    margin-left: 0
     .filter-title
       color: #157ab1
       font-size: 11px
       font-weight: bold
-      margin-bottom: 10px
+      padding-top: 15px
+      padding-bottom: 10px
+      z-index: 2
     .stars-checkbox-group
       font-size: 10px
       input
@@ -203,25 +255,27 @@ body
         font-size: 10px
         i
           color: #FDBA12
-  .map-col
-    padding: 0
-    .map
-      text-align: center
-      img
-        height: 100px
-        width: 100%
-      .map-sub
-        color: #157ab1
+  .map-row
+    margin: 0 -30px 0 -15px
+    .map-col
+      padding: 0
+      .map
         text-align: center
-        font-size: 10px
-        padding: 7px
+        img
+          height: 100px
+          width: 100%
+        .map-sub
+          color: #157ab1
+          text-align: center
+          font-size: 10px
+          padding: 7px
 
   .filtrar
     margin: 10px 0 10px 0
     .left
       h2
         margin: 0
-        margin-left: -15px
+        margin-left: 0
         font-size: 12px
         font-weight: bold
         text-align: left
@@ -250,6 +304,7 @@ body
   .slider-container
     position: relative
     top: -20px
+    height: 50px
     .rzslider
       .rz-pointer:after
         background: white

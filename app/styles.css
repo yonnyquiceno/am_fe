@@ -30,11 +30,35 @@ body {
 .no-pad {
   padding: 0 !important; }
 
+@media (min-width: 992px) {
+  .hide-on-lg {
+    display: none !important; } }
+
+@media (max-width: 992px) {
+  .hide-on-mid {
+    display: none !important; } }
+
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
+
+.expand {
+  cursor: pointer;
+  background: white; }
+  .expand-super {
+    text-align: center;
+    background-color: #F4F4F4;
+    font-weight: normal;
+    color: #157ab1;
+    font-size: 14px;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid #CCC; }
+
+@media (max-width: 992px) {
+  .expandable {
+    display: none; } }
 
 #navbar .top {
   background-color: #093a7a;
@@ -45,8 +69,15 @@ body {
     #navbar .top .brand .logo-container {
       display: table-cell;
       vertical-align: middle; }
+      @media (max-width: 992px) {
+        #navbar .top .brand .logo-container {
+          padding: 15px 0 15px 0; } }
       #navbar .top .brand .logo-container img {
         max-height: 38px; }
+        @media (max-width: 992px) {
+          #navbar .top .brand .logo-container img {
+            max-height: 25px;
+            margin-left: 20px; } }
   #navbar .top .options {
     height: 50px;
     display: table;
@@ -70,6 +101,9 @@ body {
           text-decoration: none; }
       #navbar .top .options ul li:first-child {
         border-style: none; }
+    #navbar .top .options .icon-options li {
+      border-style: none;
+      font-size: 20px; }
 
 #navbar .bottom {
   border-top: 1px solid #ccc;
@@ -90,8 +124,24 @@ body {
     #navbar .bottom ul li:hover {
       background-color: #093a7a; }
 
+#hotel-results .search-modify {
+  background-color: #ccc;
+  padding: 20px 15px 20px 15px;
+  text-align: center; }
+  #hotel-results .search-modify .btn {
+    background-color: #002c77;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: -3px; }
+  #hotel-results .search-modify input {
+    display: inline-block;
+    width: 19%;
+    padding: 5px 0 5px 0;
+    text-align: center; }
+
 #hotel-results .hotels-col {
-  padding-left: 30px; }
+  padding-left: 40px; }
 
 #hotel-results p {
   margin: 0; }
@@ -121,6 +171,9 @@ body {
   text-align: right;
   margin: 10px 0 10px 0;
   padding: 0; }
+  @media (max-width: 992px) {
+    #hotel-results .order-select {
+      text-align: center; } }
 
 #hotel-results .hotel-info-container {
   background-color: white;
@@ -189,15 +242,22 @@ body {
       padding: 5px;
       margin-top: 5px; }
 
+#filters .filters-init {
+  text-align: center;
+  font-size: 12px; }
+
 #filters .filter-row {
   background-color: white;
   margin-bottom: 5px;
-  padding: 10px 0 10px 0; }
+  padding-bottom: 5px;
+  margin-left: 0; }
   #filters .filter-row .filter-title {
     color: #157ab1;
     font-size: 11px;
     font-weight: bold;
-    margin-bottom: 10px; }
+    padding-top: 15px;
+    padding-bottom: 10px;
+    z-index: 2; }
   #filters .filter-row .stars-checkbox-group {
     font-size: 10px; }
     #filters .filter-row .stars-checkbox-group input[type="checkbox"], #filters .filter-row .stars-checkbox-group input[type="radio"] {
@@ -207,24 +267,26 @@ body {
       #filters .filter-row .stars-checkbox-group .hotel-stars i {
         color: #FDBA12; }
 
-#filters .map-col {
-  padding: 0; }
-  #filters .map-col .map {
-    text-align: center; }
-    #filters .map-col .map img {
-      height: 100px;
-      width: 100%; }
-    #filters .map-col .map .map-sub {
-      color: #157ab1;
-      text-align: center;
-      font-size: 10px;
-      padding: 7px; }
+#filters .map-row {
+  margin: 0 -30px 0 -15px; }
+  #filters .map-row .map-col {
+    padding: 0; }
+    #filters .map-row .map-col .map {
+      text-align: center; }
+      #filters .map-row .map-col .map img {
+        height: 100px;
+        width: 100%; }
+      #filters .map-row .map-col .map .map-sub {
+        color: #157ab1;
+        text-align: center;
+        font-size: 10px;
+        padding: 7px; }
 
 #filters .filtrar {
   margin: 10px 0 10px 0; }
   #filters .filtrar .left h2 {
     margin: 0;
-    margin-left: -15px;
+    margin-left: 0;
     font-size: 12px;
     font-weight: bold;
     text-align: left;
@@ -253,7 +315,8 @@ body {
 
 #filters .slider-container {
   position: relative;
-  top: -20px; }
+  top: -20px;
+  height: 50px; }
   #filters .slider-container .rzslider .rz-pointer:after {
     background: white;
     height: 20px;

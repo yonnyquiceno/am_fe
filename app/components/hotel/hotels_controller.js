@@ -6,8 +6,8 @@
         $scope.search_query = {
             "location": "Buenos Aires",
             "guests": "2",
-            "arrival": "2016-06-01",
-            "departure": "2016-06-04",
+            "arrival": "14/6/16",
+            "departure": "15/6/16",
         }
         $scope.hotels = listHotels();
         $scope.minprice = getMinPrice() - 1;
@@ -47,6 +47,7 @@
             document.getElementById("hotel-name-input").value = "";
             $scope.nmfilter = "";
         }
+
         function listHotels() {
             return hotelsService.getAll()
         }
@@ -67,7 +68,7 @@
             return stars
         }
 
-      $scope.starsCount =   function countStars(amount, arr = getStars()) {
+        $scope.starsCount = function countStars(amount, arr = getStars()) {
             var count = 0
             arr.forEach(function(stn) {
                 if (stn == amount) {
@@ -95,16 +96,39 @@
                 cb1: false
             }
         }
-        //Jquery Code
-        $('input.st-filter-as').click(function() {
+        //jqLite Code
+        angular.element('input.st-filter-as').click(function() {
             this.disabled = true;
-            $('input.st-filter').each(function() {
+            angular.element('input.st-filter').each(function() {
                 stfilterInit();
             });
         });
-        $('input.st-filter').click(function() {
+        angular.element('input.st-filter').click(function() {
             $scope.stfilter.as = false;
-            $('input.st-filter-as').prop("disabled", false);
+            angular.element('input.st-filter-as').prop("disabled", false);
+        });
+        angular.element('.expand').click(function() {
+            var target_num = angular.element(this).attr('id').split('-')[1];
+            var content_id = '#expandable-'.concat(target_num);
+            angular.element(content_id).slideToggle('fast');
+        });
+        angular.element('.expand-5').each(function(){
+          angular.element(this).click(function(){
+            angular.element('#expandable-5').slideToggle('fast');
+            angular.element('#search-terms').hide('fast');
+          });
+        });
+        angular.element('.date-input').each(function(){
+           angular.element(this).focusin(function(){
+             this.type='date';
+           });
+           angular.element(this).focusout(function(){
+             if(this.value==''){this.type='text'}
+           });
+        });
+        angular.element('#btn-new-search').click(function(){
+          angular.element('#search-terms').show('fast');
+          angular.element('.search-modify').hide('fast');
         });
     });
 })();
